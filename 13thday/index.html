@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide in on Scroll</title>
+    <style>
+        *,
+        *::after,
+        *::before {
+            box-sizing: border-box;
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            background-color: rgb(255, 192, 2);
+        }
+
+        .article {
+            background-color: #fff;
+            margin: 100px auto;
+            width: 55%;
+            height: fit-content;
+            padding: 45px;
+        }
+        h1 {
+            margin-bottom: 40px;
+            font-size: 4rem;
+        }
+        p {
+            font-size: 1.8rem;
+            text-align: justify;
+            margin: 30px 0;
+        }
+
+        .slide-left {
+            float: left;
+            margin-right: 25px;
+            transform: translateY(5px);
+            transform: translateX(-225px);
+            opacity: 0;
+            transition: .5s;
+        }
+        
+        .slide-right {
+            float: right;
+            margin-left: 25px;
+            transform: translateY(5px);
+            transform: translateX(225px);
+            opacity: 0;
+            transition: .5s;
+        }
+
+        img {
+            
+        }
+
+        .active {
+            transform: translateX(0);
+            opacity: 1;
+            transition: .5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="article">
+        <h1>Slide in on Scroll</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis atque quisquam sint ex! Nesciunt quisquam, nam culpa ad aperiam ut? Suscipit quae mollitia, eveniet doloribus enim inventore minima sunt quos. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed amet hic necessitatibus delectus vel? Labore reprehenderit qui perferendis incidunt laboriosam laudantium fugit cum reiciendis architecto! Vero officia dolorum architecto voluptatem. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, dolorem? Eveniet ad aut ut architecto at officia placeat error ex id. Corporis commodi quos non. Est reprehenderit quae eius facilis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis atque quisquam sint ex! Nesciunt quisquam, nam culpa ad aperiam ut? Suscipit quae mollitia, eveniet doloribus enim inventore minima sunt quos. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed amet hic necessitatibus delectus vel? Labore reprehenderit qui perferendis incidunt laboriosam laudantium fugit cum reiciendis architecto! Vero officia dolorum architecto voluptatem. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, dolorem? Eveniet ad aut ut architecto at officia placeat error ex id. Corporis commodi quos non. Est reprehenderit quae eius facilis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit....</p>
+        <img src="https://picsum.photos/300/390" alt="" class="slide-left image">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis atque quisquam sint ex! Nesciunt quisquam, nam culpa ad aperiam ut? Suscipit quae mollitia, eveniet doloribus enim inventore minima sunt quos. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed amet hic necessitatibus delectus vel? Labore reprehenderit qui perferendis incidunt laboriosam laudantium fugit cum reiciendis architecto! Vero officia dolorum architecto voluptatem. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, dolorem? Eveniet ad aut ut architecto at officia placeat error ex id. Corporis commodi quos non. Est reprehenderit quae eius facilis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis atque quisquam sint ex! Nesciunt quisquam, nam culpa ad aperiam ut? Suscipit quae mollitia, eveniet doloribus enim inventore minima sunt quos. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed amet hic necessitatibus delectus vel? Labore reprehenderit qui perferendis incidunt laboriosam laudantium fugit cum reiciendis architecto! Vero officia dolorum architecto voluptatem. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, dolorem? Eveniet ad aut ut architecto at officia placeat error ex id. Corporis commodi quos non. Est reprehenderit quae eius facilis.</p>
+        <img src="https://picsum.photos/300/290" alt="" class="slide-right image">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis atque quisquam sint ex! Nesciunt quisquam, nam culpa ad aperiam ut? Suscipit quae mollitia, eveniet doloribus enim inventore minima sunt quos. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed amet hic necessitatibus delectus vel? Labore reprehenderit qui perferendis incidunt laboriosam laudantium fugit cum reiciendis architecto! Vero officia dolorum architecto voluptatem. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, dolorem? Eveniet ad aut ut architecto at officia placeat error ex id. Corporis commodi quos non. Est reprehenderit quae eius facilis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit....</p>
+        <img src="https://picsum.photos/450/290" alt="" class="slide-left image">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis atque quisquam sint ex! Nesciunt quisquam, nam culpa ad aperiam ut? Suscipit quae mollitia, eveniet doloribus enim inventore minima sunt quos. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed amet hic necessitatibus delectus vel? Labore reprehenderit qui perferendis incidunt laboriosam laudantium fugit cum reiciendis architecto! Vero officia dolorum architecto voluptatem. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, dolorem? Eveniet ad aut ut architecto at officia placeat error ex id. Corporis commodi quos non. Est reprehenderit quae eius facilis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis atque quisquam sint ex! Nesciunt quisquam, nam culpa ad aperiam ut? Suscipit quae mollitia, eveniet doloribus enim inventore minima sunt quos. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed amet hic necessitatibus delectus vel? Labore reprehenderit qui perferendis incidunt laboriosam laudantium fugit cum reiciendis architecto! Vero officia dolorum architecto voluptatem. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, dolorem? Eveniet ad aut ut architecto at officia placeat error ex id. Corporis commodi quos non. Est reprehenderit quae eius facilis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis atque quisquam sint ex! Nesciunt quisquam, nam culpa ad aperiam ut? Suscipit quae mollitia, eveniet doloribus enim inventore minima sunt quos. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed amet hic necessitatibus delectus vel? Labore reprehenderit qui perferendis incidunt laboriosam laudantium fugit cum reiciendis architecto! Vero officia dolorum architecto voluptatem. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, dolorem? Eveniet ad aut ut architecto at officia placeat error ex id. Corporis commodi quos non. Est reprehenderit quae eius facilis.</p>
+        <img src="https://picsum.photos/300/420" alt="" class="slide-right image">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis atque quisquam sint ex! Nesciunt quisquam, nam culpa ad aperiam ut? Suscipit quae mollitia, eveniet doloribus enim inventore minima sunt quos. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed amet hic necessitatibus delectus vel? Labore reprehenderit qui perferendis incidunt laboriosam laudantium fugit cum reiciendis architecto! Vero officia dolorum architecto voluptatem. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, dolorem? Eveniet ad aut ut architecto at officia placeat error ex id. Corporis commodi quos non. Est reprehenderit quae eius facilis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis atque quisquam sint ex! Nesciunt quisquam, nam culpa ad aperiam ut? Suscipit quae mollitia, eveniet doloribus enim inventore minima sunt quos. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed amet hic necessitatibus delectus vel? Labore reprehenderit qui perferendis incidunt laboriosam laudantium fugit cum reiciendis architecto! Vero officia dolorum architecto voluptatem. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, dolorem? Eveniet ad aut ut architecto at officia placeat error ex id. Corporis commodi quos non. Est reprehenderit quae eius facilis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit....</p>
+        
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

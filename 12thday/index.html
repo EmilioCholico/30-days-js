@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Detection</title>
+    <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
+</head>
+<body>
+    <script>
+        const keys = []
+        const combinationWord = "cholico"
+        const keysUpdate = (e) => {
+            if(keys.length >= 7) {
+                keys.shift();
+            }
+            keys.push(e);
+        }
+
+        window.addEventListener("keypress", e => {
+            keysUpdate(e.key);
+            if (keys.join("") === combinationWord) cornify_add()
+        });
+    </script>
+</body>
+</html>
