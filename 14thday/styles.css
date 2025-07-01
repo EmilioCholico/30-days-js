@@ -66,6 +66,11 @@ li {
     cursor: pointer;
     display: flex;
     align-items: center;
+    z-index: 1;
+}
+
+p {
+    pointer-events: none;
 }
 
 
@@ -86,4 +91,15 @@ input[type="submit"] {
     width: 90px;
     border: none;
     background-color: rgb(176, 176, 176);
+}
+
+.changes {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    width: 100px;
+    height: 30px;
 }

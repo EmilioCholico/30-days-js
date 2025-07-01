@@ -1,39 +1,68 @@
 const addItems = document.querySelector(".add-option");
 const itemsList = document.querySelector(".options-menu");
+const changes = document.querySelectorAll("button")
 let items = [];
 
-const submitPlate = (e) => {
-    addItems.preventDefault;
-    console.log(`${e} Si se hizo jaja`)
-}
-
-const chargePlates = e => {
-    items.push(e);
-}
-
-addItems.addEventListener("submit", function(e) {
+function addItem(e) {
     e.preventDefault();
-    const newItem = this.elements[0].value;
+    let newItem = this.elements[0].value;
     localStorage.setItem(`${newItem}`, newItem);
-    items.push(localStorage.getItem(newItem));
-})
+    if (items.length == 0) {   
+        items.push(localStorage.getItem(newItem));
+        itemsList.innerHTML = 
+        `<li>
+            <p>⭕</p><p>${newItem}</p>
+        </li>`;
+    } else {
+        items.push(localStorage.getItem(newItem));
+        itemsList.innerHTML += 
+        `<li>
+            <p>⭕</p><p>${newItem}</p>
+        </li>`;
+    }
+    this.elements[0].value = ""
+}
+
+addItems.addEventListener("submit", addItem)
 
 document.addEventListener("DOMContentLoaded", function() {
-    items = (Object.values(localStorage))
-    itemsList.innerHTML = items.map(item =>
+    items = (Object.values(localStorage));
+    if (items.length == 0) {
+        return;
+    } else {
+        itemsList.innerHTML = items.map(item =>
         `<li>
-            <p>${item}</p>
+            <p>⭕</p><p>${item}</p>
         </li>`
     ).join('');
-    console.log(items)
-    // if (items.length >= localStorage.length){
-    //     return
-    // } else {
-    //     for(const comida in localStorage) {
-    //     console.log(`Comida ${comida} o ${localStorage[comida]}`)
-    // }
-    // }
+    console.log(items);
+    }
     
-    // console.log(menuRefresh)
-    
+});
+
+const symbolChange = (e) => {
+    const element = Array.from(e.children);
+    element[0].textContent == "⭕" ? element[0].textContent = "✅"  :  element[0].textContent = "⭕";
+}
+
+itemsList.addEventListener("click", e => symbolChange(e.target))
+
+
+
+changes[0].addEventListener("click", function() {
+    localStorage.clear();
+    itemsList.innerHTML = `
+        <li><p>-  Esperando orden...</p></li>
+    `;
+    items = []
+});
+
+changes[1].addEventListener("click", function() {
+    const li = itemsList.children;
+    const lis = itemsList.childNodes;
+    lis.forEach(list => {
+        list.children[0].textContent == "⭕" ? list.children[0].textContent = "✅"  :  list.children[0].textContent = "⭕"
+    })
+    console.log(li)
+    console.log(lis)
 })
