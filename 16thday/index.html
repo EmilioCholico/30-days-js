@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Band Names</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <ul class="bands-list">
+    </ul>
+    <script>
+        const list = document.querySelector(".bands-list")
+        const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
+
+        const cleanName = (e) => {
+            e.sort((a, b) => {
+                const cleanA = a.replace(/^(An|A|The) /i, '')
+                const cleanB = b.replace(/^(An|A|The) /i, '')
+                return cleanA.localeCompare(cleanB);
+            });
+
+            e.forEach(band => {list.innerHTML += `<li>${band}</li>`;
+                
+            })
+        };
+
+        cleanName(bands);
+    </script>
+</body>
+</html>
