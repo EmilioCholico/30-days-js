@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camara divertida</title>
+    <style>
+        *,
+        *::after,
+        *::before {
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            background-color: rgb(255, 225, 0);
+        }
+
+        .photobooth {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .photo {
+            width: 50%;
+            height: fit-content;
+            margin: 40px auto 0;
+        }
+
+        .player {
+            width: 250px;
+            position: absolute;
+            left: 63%;
+            top: 6%;
+        }
+
+        .strip {
+            width: 50%;
+            height: auto;
+            background-color: white;
+            display: flex;
+        }
+
+        .controls {
+            position: absolute;
+        }
+
+        .image {
+            padding: 5px 10px 40px 10px;
+            background-size: cover;
+            border: 1px solid #c2c2c2;
+            margin-bottom: 30px;
+        }
+
+        .image:first-child {
+            margin-left: 25px;
+        }
+        
+        .image:last-child {
+            margin-right: 25px;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="photobooth">
+    <div class="controls">
+      <button onClick="takePhoto()">Take Photo</button>
+<!--       <div class="rgb">
+        <label for="rmin">Red Min:</label>
+        <input type="range" min=0 max=255 name="rmin">
+        <label for="rmax">Red Max:</label>
+        <input type="range" min=0 max=255 name="rmax">
+
+        <br>
+
+        <label for="gmin">Green Min:</label>
+        <input type="range" min=0 max=255 name="gmin">
+        <label for="gmax">Green Max:</label>
+        <input type="range" min=0 max=255 name="gmax">
+
+        <br>
+
+        <label for="bmin">Blue Min:</label>
+        <input type="range" min=0 max=255 name="bmin">
+        <label for="bmax">Blue Max:</label>
+        <input type="range" min=0 max=255 name="bmax">
+      </div> -->
+    </div>
+
+    <canvas class="photo"></canvas>
+    <video class="player" playsinline></video>
+    <div class="strip">
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
