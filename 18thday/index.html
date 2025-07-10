@@ -29,14 +29,14 @@
         .photo {
             width: 50%;
             height: fit-content;
-            margin: 40px auto 0;
+            margin: 2% auto 0;
         }
 
         .player {
             width: 250px;
             position: absolute;
-            left: 63%;
-            top: 6%;
+            right: 25%;
+            top: 4%;
         }
 
         .strip {
@@ -44,10 +44,14 @@
             height: auto;
             background-color: white;
             display: flex;
+            flex-wrap: wrap;
         }
 
         .controls {
+            transform: scale(.7);
             position: absolute;
+            left: 22%;
+            top: 3%;
         }
 
         .image {
@@ -56,12 +60,15 @@
             border: 1px solid #c2c2c2;
             margin-bottom: 30px;
         }
+        a {
+            width: auto;
+        }
 
-        .image:first-child {
+        a:first-child {
             margin-left: 25px;
         }
         
-        .image:last-child {
+        a:last-child {
             margin-right: 25px;
             
         }
@@ -72,9 +79,9 @@
     <div class="photobooth">
     <div class="controls">
       <button onClick="takePhoto()">Take Photo</button>
-<!--       <div class="rgb">
+      <div class="rgb">
         <label for="rmin">Red Min:</label>
-        <input type="range" min=0 max=255 name="rmin">
+        <input class="modificador" type="range" min=0 max=255 name="rmin">
         <label for="rmax">Red Max:</label>
         <input type="range" min=0 max=255 name="rmax">
 
@@ -91,11 +98,12 @@
         <input type="range" min=0 max=255 name="bmin">
         <label for="bmax">Blue Max:</label>
         <input type="range" min=0 max=255 name="bmax">
-      </div> -->
+      </div>
     </div>
 
     <canvas class="photo"></canvas>
     <video class="player" playsinline></video>
+    <audio src="snap.mp3" class="snap"></audio>
     <div class="strip">
     </div>
   </div>
