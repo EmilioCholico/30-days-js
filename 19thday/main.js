@@ -1,10 +1,10 @@
-const recognition = new webkitSpeechRecognition ();
-let speaking = false;
+const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
 const notepad = document.querySelector(".notes");
+let ultimaPalabra = '';
 
 recognition.continious = true;
 recognition.lang = 'es-MX'
-recognition.interimResults = false;
+recognition.interimResults = true;
 
 recognition.onstart = () => {
     speaking = true;
@@ -12,24 +12,37 @@ recognition.onstart = () => {
 }
 
 recognition.onresult = (event) => {
-    for (let i = event.resultIndex; i < event.results.lenght; i++) {
-        if(event.results[i].isFinal) notepad.innerHTML += `<p>${event.results[i][0].transcript}</p><br>`;
+    const last = event.results.length -1;
+    const result = event.results[last];
+    let parrafo = notepad.appendChild(document.createElement("p"))
+
+    if(!result.isFinal) {
+        const textoActual = result[0].transcript.trim();
+
+        const palabras = textoActual.split(" ");
+        const nuevaPalabra = palabras[palabras.length - 1];
+
+        if(nuevaPalabra && nuevaPalabra !== ultimaPalabra) {
+            console.log("Palabra nueva:", nuevaPalabra);
+            ultimaPalabra = nuevaPalabra;
+            parrafo.textContent += ultimaPalabra;
+        }
+    } else {
+        const fraseCompleta = result[0].transcript;
+        console.log("Frase completa:", fraseCompleta);
+        ultimaPalabra = '';
     }
-}
+};
 
 recognition.onerror = (event) => {
     console.error("Speech recognition error:", event.error);
 };
 
 recognition.onend = () => {
-    speaking = false;
-    console.log("Speech recognition endeed.");
+    recognition.start()
 }
 
+
 function procesar() {
-    if(!speaking) {
         recognition.start();
-    } else {
-        recognition.stop();
-    }
 }
