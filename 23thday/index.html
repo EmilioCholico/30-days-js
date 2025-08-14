@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Voicenator 5000</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="voiceinator">
+        <div class="title">
+            <h1>The Voiceinator 5000</h1>
+        </div>
+        <div class="sound">
+            <select name="speaker" id="options">
+            </select>
+            <label for="">Rate:</label>
+            <input type="range" min="0" max="3" value="1" step="0.1">
+            <label for="">Pitch:</label>
+            <input type="range" min="0" max="2"step="0.1">
+            <textarea name="" id="texts-speech" rows="8"></textarea>
+        </div>
+        <div class="buttons"><button class="stop" onclick="speechPause()">Stop!</button><button class="speak" onclick="speechText()">Speak</button></div>
+    </div>
+</body>
+<script src="main.js"></script>
+</html>

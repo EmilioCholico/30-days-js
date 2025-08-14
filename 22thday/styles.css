@@ -1,0 +1,63 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+html {
+    width: 100%;
+    height: 100vh;
+}
+
+body {
+    background: linear-gradient(#0026ff,#00093b);
+}
+
+.menu {
+    width: 60%;
+    height: 10vh;
+    list-style: none;
+    padding: 0;
+    position: relative;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+li > a {
+    font-size: 1.5rem;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    background-color: #ffffff21;
+    border-radius: 20px;
+    padding: 0 5px;
+}
+
+
+.wrapper {
+    color: #fff;
+    width: 30%;
+    position: relative;
+    margin: auto;
+}
+
+p {
+    margin-bottom: 25px;
+}
+
+.highlight {
+    top: 0;
+    left: 0;
+    content: "";
+    background-color: #000000;
+    border-radius: 20px;
+    transition: all 0.2s ease-out;
+    position: absolute;
+    z-index: -1;
+}
