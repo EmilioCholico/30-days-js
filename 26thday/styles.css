@@ -1,0 +1,39 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#0105ff,rgb(0, 2, 146),#000140);
+}
+
+.options {
+    width: 50%;
+    display: flex;
+    margin: 50px auto 0;
+    justify-content: space-around;
+}
+
+h2 {
+    background-color: #0001406e;
+    color: #fff;
+    text-align: center;
+    padding: 8px 20px;
+    border-radius: 5px;
+}
+
+h2:hover {
+    cursor: pointer;
+}
+/* 
+.info {
+    display: none;
+} */
